@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import banner from "./assets/banner2.avif";
 import banner2 from "./assets/banners.png";
 import arrowIcon from "./assets/arrow.svg";
-const HomeBanner = () => {
+const HomeBanner = ({setModal}) => {
   const [join, setJoin] = useState(false);
   const bannerStyle = {
     backgroundImage: `url(${banner})`, // Use the imported image
@@ -25,10 +25,13 @@ const HomeBanner = () => {
     <div style={bannerStyle}>
       <div style={banners} className="position-relative">
         <button
-          style={{ top: "5%", left: "74%" }}
+        
+          style={{ top: "5%", left: "70%" }}
           className="
           d-block d-md-none   btn bg-transparent border border-white bg-none text-white position-relative "
-          onClick={() => setJoin(!join)}
+          onClick={() => {
+            setJoin(!join)
+            setModal(true)}}
         >
           {join ? "Leave Group" : "Join Group"}
         </button>

@@ -1,7 +1,7 @@
 import React from "react";
 
 import logo from "./assets/whole@2x.png";
-const Header = () => {
+const Header = ({setModal}) => {
   return (
    
       <div className="container  d-flex justify-content-between align-items-center fixed-top
@@ -24,7 +24,7 @@ const Header = () => {
             placeholder="Search for your favorite groups in ATG"
           />
         </div>
-        <p style={{ cursor: "pointer" }} className="mt-3 ">
+        <p style={{ cursor: "pointer" }} className="mt-3"onClick={()=>setModal(true)}>
           Create An Account <span className="text-primary">its free!</span>
         </p>
       </div>
